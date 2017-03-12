@@ -1,16 +1,11 @@
 env
 echo "HASH: \"$HASH\""
+echo "CODEBUILD_BUILD_ID: \"$CODEBUILD_BUILD_ID\""
 echo "INSTALLATION_ID: \"$INSTALLATION_ID\""
 cat > payload.json <<EOF
 {
-  "hash": "$HASH",
-  "state": "success",
-  "installationId": "$INSTALLATION_ID",
-  "build": {
-    "id": "$CODEBUILD_BUILD_ID",
-    "url": "https://$AWS_REGION.console.aws.amazon.com/codebuild/home?region=$AWS_REGION#/builds/$CODEBUILD_BUILD_ID/view/new"
-  },
-  "repo_full_name": "$REPO_FULL_NAME"
+  "id": "$CODEBUILD_BUILD_ID",
+  "region": "AWS_REGION"
 }
 EOF
 
