@@ -5,7 +5,7 @@ echo "INSTALLATION_ID: \"$INSTALLATION_ID\""
 cat > payload.json <<EOF
 {
   "id": "$CODEBUILD_BUILD_ID",
-  "region": "AWS_REGION"
+  "region": "$AWS_REGION"
 }
 EOF
 
