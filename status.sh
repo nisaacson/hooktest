@@ -7,7 +7,7 @@ cat > payload.json <<EOF
   "state": "success",
   "installationId": "$INSTALLATION_ID",
   "build": {
-    "id": "$CODEBUILD_BUILD_ID"
+    "id": "$CODEBUILD_BUILD_ID",
     "url": "https://$AWS_REGION.console.aws.amazon.com/codebuild/home?region=$AWS_REGION#/builds/$CODEBUILD_BUILD_ID/view/new"
   },
   "repo_full_name": "$REPO_FULL_NAME"
@@ -22,3 +22,4 @@ curl --request POST \
   --header 'content-type: application/json' \
   --data @payload.json
 echo "build status complete"
+rm payload.json
