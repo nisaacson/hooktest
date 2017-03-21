@@ -8,4 +8,5 @@ PAYLOAD="{\"state\": \"success\", \"id\": \"$CODEBUILD_BUILD_ID\", \"region\": \
 
 echo "payload is: $PAYLOAD"
 curl -XPOST --data "$PAYLOAD" "https://codereview.dev.api.nisaacson.com/status" -v
+
 echo "build status complete"
