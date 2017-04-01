@@ -1,2 +1,5 @@
 # hooktest
-testing out integration
+
+testing out integration 10
+
+See `status.sh`
